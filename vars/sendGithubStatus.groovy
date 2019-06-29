@@ -6,7 +6,7 @@
  * @param opts.state - The state of the status. Can be one of `error`, `failure`, `pending`, or `success`.
  * @param opts.message - A short description of the status.
  */
-void call(opts) {
+void call(Map opts) {
   step([
       $class: "GitHubCommitStatusSetter",
       reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/bluegroundltd/atlas.git"],
