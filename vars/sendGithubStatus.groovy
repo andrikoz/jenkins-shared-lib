@@ -9,9 +9,10 @@
 void call(Map opts) {
   step([
       $class: "GitHubCommitStatusSetter",
+      commitShaSource: [$class: "ManuallyCommitShaSource", url: opts.commitSha],
       reposSource: [$class: "ManuallyEnteredRepositorySource", url: "https://github.com/bluegroundltd/atlas.git"],
       contextSource: [$class: "ManuallyEnteredCommitContextSource", context: opts.context],
-      //errorHandlers: [[$class: "ChangingBuildStatusErrorHandler", result: "UNSTABLE"]],
+      errorHandlers: [[$class: "ChangingBuildStatusErrorHandler", result: "UNSTABLE"]],
       statusResultSource: [ $class: "ConditionalStatusResultSource", results: [[$class: "AnyBuildResult", message: opts.message, state: opts.state]] ]
   ])
 }
