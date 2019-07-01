@@ -6,7 +6,7 @@
  * @param opts.repo - the repository to be checked out
  * @param opts.branch - the branch of the repository to be checked out
  */
-def call(opts) {
+def call(Map opts) {
   checkout([$class                           : 'GitSCM',
             poll                             : true,
             branches                         : [[name: "*/${opts.branchName}"]],

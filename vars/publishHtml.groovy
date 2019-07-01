@@ -5,7 +5,7 @@
  * @param files - the report files
  * @param reportName - the report name
  */
-def call(opts) {
+def call(Map opts) {
   publishHTML(target: [
       allowMissing         : true,
       alwaysLinkToLastBuild: false,
