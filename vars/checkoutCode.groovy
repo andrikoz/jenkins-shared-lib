@@ -14,9 +14,9 @@ def call(Map opts) {
             extensions                       : [
                 [$class: 'CheckoutOption'],
                 [$class: 'CloneOption', noTags: true, reference: '', shallow: true, depth: 1],
-                [$class: 'LocalBranch', localBranch: ${opts.branchName}]
+                [$class: 'LocalBranch', localBranch: opts.branchName]
             ],
             submoduleCfg                     : [],
-            userRemoteConfigs                : [[url: ${opts.repo}, credentialsId: 'jenkins-git']]
+            userRemoteConfigs                : [[url: opts.repo, credentialsId: 'jenkins-git']]
   ])
 }
