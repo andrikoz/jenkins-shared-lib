@@ -1,0 +1,1 @@
+Get the author of the commit pointed by HEAD
