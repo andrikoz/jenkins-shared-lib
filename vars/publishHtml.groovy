@@ -5,13 +5,13 @@
  * @param files - the report files
  * @param reportName - the report name
  */
-def call(directoryPattern, files, reportName) {
+def call(opts) {
   publishHTML(target: [
       allowMissing         : true,
       alwaysLinkToLastBuild: false,
       keepAll              : true,
-      reportDir            : directoryPattern,
-      reportFiles          : files,
-      reportName           : reportName
+      reportDir            : opts.directoryPattern,
+      reportFiles          : opts.files,
+      reportName           : opts.reportName
   ])
 }

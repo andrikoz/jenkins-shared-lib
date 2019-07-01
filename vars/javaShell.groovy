@@ -9,6 +9,6 @@ def call(script, version="java 8.0.212-zulu") {
     set +x
     sdk use ${version}
     set -x
-    ${script}
+     ${script}
   """
 }
